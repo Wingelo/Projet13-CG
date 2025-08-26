@@ -1,23 +1,27 @@
 import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { AppComponent } from './app.component';
 
-describe('App', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [App],
-    }).compileComponents();
-  });
+describe('AppComponent', () => {
+  beforeEach(() => TestBed.configureTestingModule({
+    declarations: [AppComponent]
+  }));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
+    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
+  it(`should have as title 'Projet13'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('Projet13');
+  });
+
   it('should render title', () => {
-    const fixture = TestBed.createComponent(App);
+    const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, project13-CG');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Projet13-CG app is running!');
   });
 });

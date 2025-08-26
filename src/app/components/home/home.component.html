@@ -1,0 +1,32 @@
+<p-card
+  header="Your Car Your Way"
+  subheader="Lancement bientôt !"
+  [style]="{ maxWidth: '760px', margin: '2rem auto' }"
+>
+  <div style="margin-bottom: 1rem;">
+    @if (sessionService?.userSession?.username) {
+      <p class="headline">
+        Bienvenue <span class="username">{{ sessionService.userSession.username }}</span>
+      </p>
+    } @else {
+      <p class="headline">Bienvenue</p>
+    }
+
+    <p class="lead">
+      Notre nouvelle application arrive très bientôt. En attendant, notre équipe support est disponible
+      pour répondre à vos questions.
+    </p>
+  </div>
+
+  <p-message severity="info" text="Support disponible en direct · réponses rapides"></p-message>
+
+  <div style="margin-top: 1rem;">
+    <button
+      pButton
+      type="button"
+      label="Démarrer le chat"
+      icon="pi pi-comments"
+      routerLink="/chat"
+    ></button>
+  </div>
+</p-card>

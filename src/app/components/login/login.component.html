@@ -1,0 +1,48 @@
+<div class="auth-bg flex align-items-center justify-content-center p-3" style="min-height: 100vh;">
+  <p-card class="auth-card">
+    <div class="text-center mb-3 brand">
+      <span class="brand-icon surface-100 text-primary flex align-items-center justify-content-center">
+        <i class="pi pi-car"></i>
+      </span>
+      <h2 class="m-0">Your Car Your Way</h2>
+      <p class="m-0 text-600">Connexion à votre espace</p>
+    </div>
+
+    <p-divider class="my-3"></p-divider>
+
+    <form (ngSubmit)="login()" class="flex flex-column gap-3">
+      <div class="p-float-label w-full">
+        <label for="username">Nom d’utilisateur</label>
+        <input
+          pInputText
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          class="w-full"
+          autocomplete="username"
+        />
+      </div>
+
+      <div  class="flex flex-column gap-3">
+        <label for="password">Mot de passe</label>
+        <p-password
+          inputId="password"
+          name="password"
+          [(ngModel)]="password"
+          [feedback]="false"
+          [toggleMask]="true"
+          inputStyleClass="w-full"
+          autocomplete="current-password"
+        ></p-password>
+      </div>
+
+      @if (errorMessage) {
+        <p-message severity="error">
+          {{ errorMessage }}
+        </p-message>
+      }
+
+      <button pButton type="submit" label="Se connecter" class="w-full mt-1"></button>
+    </form>
+  </p-card>
+</div>
