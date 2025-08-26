@@ -14,7 +14,7 @@ Préalablement, il est nécessaire d'avoir sur le poste :
 ## Récupérer les sources du projet
 
 Dans un terminal, placez vous dans un répertoire où déposer les sources et tapez :
-`git clone <lien_du_répertoire_git>`
+`git clone [<lien_du_répertoire_git>](https://github.com/Wingelo/Projet13-CG.git)`
 
 ---
 
